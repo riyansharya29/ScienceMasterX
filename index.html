@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBSE Class 10 Science Quiz V2.0</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+href="css/certificate.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#2563eb">
+</head>
+
+<body>
+
+    <!-- Certificate -->
+
+<div id="certificateModal" class="certificate-modal">
+
+<div class="certificate">
+
+<span class="closeCertificate">&times;</span>
+
+<h1>🏆 CERTIFICATE OF ACHIEVEMENT 🏆</h1>
+
+<p>This Certificate is proudly presented to</p>
+
+<h2 id="certificateStudentName">Student Name</h2>
+
+<p>For successfully completing</p>
+
+<h3 id="certificateChapter">Chapter Name</h3>
+
+<p class="score">
+Score :
+<span id="certificateScore"></span>
+</p>
+
+<p>
+Percentage :
+<span id="certificatePercentage"></span>
+</p>
+
+<p class="grade">
+Grade :
+<span id="certificateGrade"></span>
+</p>
+
+<p>
+Date :
+<span id="certificateDate"></span>
+</p>
+
+<p>
+Certificate ID :
+<span id="certificateId"></span>
+</p>
+
+<div class="bottom">
+
+<div class="sign">
+
+<hr>
+
+Quiz App
+
+</div>
+
+<div class="sign">
+
+<hr>
+
+Instructor
+
+</div>
+
+</div>
+
+<button class="downloadCertificate">
+
+📄 Download PDF
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- HEADER -->
+<!-- ========================= -->
+
+<header class="header">
+
+    <div class="logo">
+        🧪
+    </div>
+
+    <div class="title">
+
+        <h1>CBSE Class 10 Science Quiz</h1>
+
+        <p>
+            NCERT • Board Pattern • Offline • V2.0
+        </p>
+
+    </div>
+
+    <button id="settingsBtn" type="button" aria-label="Open Settings" onclick="openSettings()">⚙️</button>
+
+</header>
+
+
+<!-- ========================= -->
+<!-- HOME SCREEN -->
+<!-- ========================= -->
+
+</div> <!-- dashboard -->
+
+<section id="homeScreen">
+
+<div class="welcomeBlock">
+  <div class="eyebrow">SCIENCE MASTER X</div>
+  <h2>Ready to study? 👋</h2>
+  <p>Practice NCERT concepts, revise chapters and improve your score.</p>
+</div>
+
+
+<!-- Mobile StudentHub-style dashboard -->
+<section class="mobileDashboard" aria-label="Science Master X mobile dashboard">
+  <div class="mobileWelcome">
+    <div class="mobileEyebrow">SCIENCE MASTER X</div>
+    <h2>Good morning, <span id="mobileStudentName">Student</span>.</h2>
+    <p>Your day at a glance.</p>
+  </div>
+
+  <div class="mobileNextClass mobilePanel">
+    <div class="mobileLabel">NEXT CLASS</div>
+    <div class="mobileBigText" id="mobileNextClassText">No classes scheduled for today.</div>
+  </div>
+
+  <div class="mobileTwoCards">
+    <div class="mobilePanel miniPanel">
+      <div class="mobileLabel">ATTENDANCE</div>
+      <div class="mobileMetric" id="mobileAttendance">—</div>
+      <div class="mobileMuted">Track your study progress</div>
+    </div>
+    <div class="mobilePanel miniPanel">
+      <div class="mobileLabel">NEXT EXAM</div>
+      <div class="mobileMetric">—</div>
+      <div class="mobileMuted">Add your exam schedule</div>
+    </div>
+  </div>
+
+  <div class="mobileTodayLabel">TODAY · <span id="mobileDayName">TODAY</span></div>
+  <div class="mobileToday mobilePanel">
+    <div class="mobileCalendarIcon">▣</div>
+    <h3>No classes scheduled today</h3>
+    <p>Add your subjects and build your timetable to see your day here.</p>
+    <button type="button" class="mobileOutlineBtn" id="mobileTimetableBtn">▣&nbsp; Open timetable</button>
+  </div>
+
+  <div class="mobileTasksHead">
+    <span>TASKS</span>
+    <button type="button" id="mobileAddTaskBtn">Add task</button>
+  </div>
+  <div class="mobileTaskEmpty mobilePanel">
+    <span>✓</span>
+    <div><strong>No tasks yet</strong><small>Add study tasks from here.</small></div>
+  </div>
+</section>
+
+<div class="dashboard">
+
+<div class="card">
+<h2>🏆 High Score</h2>
+<h1 id="highScore">0%</h1>
+</div>
+
+<div class="card">
+<h2>📚 Questions</h2>
+<h1 id="questionCount">200+</h1>
+</div>
+
+<div class="card">
+<h2>⭐ Bookmarks</h2>
+<h1 id="bookmarkCount">0</h1>
+</div>
+
+<div class="card">
+<h2>🔥 Accuracy</h2>
+<h1 id="accuracy">0%</h1>
+</div>
+
+<div class="card">
+<h2>📝 Attempted</h2>
+<h1 id="attemptedCount">0</h1>
+</div>
+
+<div class="card">
+<h2>✅ Correct</h2>
+<h1 id="correctCount">0</h1>
+</div>
+
+<div class="card">
+<h2>🔥 Streak</h2>
+<h1 id="streakCount">0</h1>
+</div>
+
+</div>   <!-- dashboard -->
+
+<div class="menu">
+
+<h2>Select Chapter</h2>
+
+<select id="chapter">
+
+<option value="all">All Chapters</option>
+
+<option value="1">1. Chemical Reactions and Equations</option>
+
+<option value="2">2. Acids, Bases and Salts</option>
+
+<option value="3">3. Metals and Non-metals</option>
+
+<option value="4">4. Carbon and its Compounds</option>
+
+<option value="5">5. Life Processes</option>
+
+<option value="6">6. Control and Coordination</option>
+
+<option value="7">7. How do Organisms Reproduce?</option>
+
+<option value="8">8. Heredity</option>
+
+<option value="9">9. Light - Reflection and Refraction</option>
+
+<option value="10">10. Human Eye and Colourful World</option>
+
+<option value="11">11. Electricity</option>
+
+<option value="12">12. Magnetic Effects of Electric Current</option>
+
+<option value="13">13. Our Environment</option>
+
+</select>
+
+
+<h2>Number of Questions</h2>
+
+<select id="count">
+
+<option>10</option>
+
+<option selected>20</option>
+
+<option>30</option>
+
+<option>40</option>
+
+<option>50</option>
+
+</select>
+<!-- ========================= -->
+<!-- QUIZ MODES -->
+<!-- ========================= -->
+
+<div class="modeGrid">
+
+    <button class="modeBtn" id="chapterQuizBtn">
+        📖
+        <span>Chapter Quiz</span>
+    </button>
+
+    <button class="modeBtn" id="fullQuizBtn">
+        🎯
+        <span>Full Syllabus</span>
+    </button>
+
+    <button class="modeBtn" id="bookmarkQuizBtn">
+        ⭐
+        <span>Bookmarks</span>
+    </button>
+
+    <button class="modeBtn" id="wrongQuizBtn">
+        ❌
+        <span>Wrong Questions</span>
+    </button>
+
+</div>
+
+<input
+    type="text"
+    id="studentName"
+    class="studentInput"
+    placeholder="👤 Enter Your Name">
+
+<button id="startBtn" class="startBtn">
+    🚀 Start Quiz
+
+</button>
+    <!-- ========================= -->
+<!-- STUDY RESOURCES -->
+<!-- ========================= -->
+
+<div class="studySection">
+
+    <h2 class="studyHeading">📚 Study Resources</h2>
+
+    <div class="studyGrid">
+
+        <button class="studyCard" onclick="location.href='notes.html'">
+
+            <div class="studyIcon">📚</div>
+
+            <div class="studyContent">
+                <h3>NCERT Notes</h3>
+                <p>Offline PDF Notes</p>
+            </div>
+
+            <div class="studyArrow">➜</div>
+
+        </button>
+
+        <button class="studyCard" onclick="document.getElementById('startBtn').click()">
+
+            <div class="studyIcon">📝</div>
+
+            <div class="studyContent">
+                <h3>Quiz</h3>
+                <p>MCQs • PYQs • Case Study</p>
+            </div>
+
+            <div class="studyArrow">➜</div>
+
+        </button>
+
+        <button class="studyCard" onclick="location.href='mindmaps.html'">
+
+    <div class="studyIcon">🧠</div>
+
+    <div class="studyContent">
+        <h3>Mind Maps</h3>
+        <p>Quick Visual Revision</p>
+    </div>
+
+    <div class="studyArrow">➜</div>
+
+</button>
+
+
+        <button class="studyCard" onclick="alert('🚧 Coming Soon')">
+
+            <div class="studyIcon">📄</div>
+
+            <div class="studyContent">
+                <h3>Formula Sheet</h3>
+                <p>Important Formula Collection</p>
+            </div>
+
+            <div class="studyArrow">🔒</div>
+
+        </button>
+
+       <button class="studyCard" onclick="location.href='diagrams.html'">
+
+<div class="studyIcon">🧪</div>
+
+<div class="studyContent">
+<h3>Important Diagrams</h3>
+<p>NCERT Important Diagrams</p>
+</div>
+
+<div class="studyArrow">➜</div>
+
+</button>
+    </div>
+
+</div>
+
+
+</div>
+
+<div class="mobileNav" aria-label="Quick navigation">
+  <button type="button" class="navItem active" onclick="window.scrollTo({top:0,behavior:'smooth'})"><span>⌂</span><small>Home</small></button>
+  <button type="button" class="navItem" onclick="document.querySelector('.studySection').scrollIntoView({behavior:'smooth'})"><span>▣</span><small>Study</small></button>
+  <button type="button" class="navItem navPrimary" onclick="document.getElementById('startBtn').click()"><span>▶</span><small>Quiz</small></button>
+  <button type="button" class="navItem" onclick="location.href='notes.html'"><span>▤</span><small>Notes</small></button>
+  <button type="button" class="navItem" onclick="openSettings()"><span>⚙</span><small>Settings</small></button>
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- QUIZ SCREEN -->
+<!-- ========================= -->
+
+<section id="quizScreen" style="display:none;">
+
+<div class="quizContainer">
+
+<div class="topBar">
+
+<div id="progress">
+Question 1 / 20
+</div>
+
+<div id="timer">
+00:00
+</div>
+
+<div id="score">
+Score : 0
+</div>
+
+</div>
+
+<div class="progressBar">
+
+<div
+id="progressFill"
+class="progressFill">
+</div>
+
+</div>
+
+<h2 id="chapterTitle">
+
+Chapter Name
+
+</h2>
+
+<div id="questionBox">
+
+Question will appear here...
+
+</div>
+
+<div id="optionsBox">
+
+</div>
+
+<div id="explanationBox">
+
+</div>
+
+<div class="quizButtons">
+
+<button id="bookmarkBtn">
+
+⭐ Bookmark
+
+</button>
+
+<button id="nextBtn">
+
+Next ➜
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- RESULT SCREEN -->
+<!-- ========================= -->
+
+<section id="resultScreen" style="display:none;">
+
+<div class="resultContainer">
+
+<h1>🏆 Quiz Finished</h1>
+
+<button id="viewCertificate" class="certificateViewBtn">
+🏆 View Certificate
+</button>
+
+<div class="resultCard">
+
+    <div id="resultEmoji">🏆</div>
+
+    <h1 id="resultGrade">A+</h1>
+
+    <div class="circle">
+        <div id="percentageText">0%</div>
+    </div>
+
+    <div class="stats">
+
+        <div class="stat">
+            <h3 id="correctResult">0</h3>
+            <p>Correct</p>
+        </div>
+
+        <div class="stat">
+            <h3 id="wrongResult">0</h3>
+            <p>Wrong</p>
+        </div>
+
+        <div class="stat">
+            <h3 id="timeResult">00:00</h3>
+            <p>Time</p>
+        </div>
+
+    </div>
+
+    <p id="resultMessage"></p>
+
+</div>
+
+<div id="finalScore" class="finalScoreSummary">
+    <div class="summaryRow"><span>Score</span><strong id="resultScore">0 / 0</strong></div>
+    <div class="summaryRow"><span>Percentage</span><strong id="resultPercentage">0%</strong></div>
+    <div class="summaryRow"><span>Time</span><strong id="resultTime">00:00</strong></div>
+</div>
+
+</div>
+
+<div class="resultButtons">
+
+    <button id="shareBtn">
+📤 Share Result
+</button>
+
+<button id="restartBtn">
+🔄 Play Again
+</button>
+
+<button id="homeBtn">
+🏠 Home
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- SETTINGS MODAL -->
+<!-- ========================= -->
+
+<div id="settingsModal" class="modal" style="display:none;">
+  <div class="settingsSheet">
+    <div class="settingsHeader">
+      <div>
+        <div class="settingsEyebrow">SCIENCE MASTER X</div>
+        <h2>Settings</h2>
+      </div>
+      <button id="closeSettings" class="settingsClose" aria-label="Close settings">×</button>
+    </div>
+
+    <div class="profileCard">
+      <div class="profileAvatar">🧪</div>
+      <div class="profileInfo">
+        <strong id="settingsStudentName">CBSE Student</strong>
+        <span>Class 10 • Science</span>
+      </div>
+      <button class="profileEdit" id="settingsEditBtn" type="button">Edit</button>
+    </div>
+
+    <div class="settingsGroup">
+      <div class="settingsGroupTitle">Appearance</div>
+      <div class="settingRow">
+        <div class="settingIcon">🌙</div>
+        <div class="settingText"><strong>Dark mode</strong><span>Use the dark StudentHub-style theme</span></div>
+        <label class="switch"><input type="checkbox" id="darkModeToggle" checked><span></span></label>
+      </div>
+    </div>
+
+    <div class="settingsGroup">
+      <div class="settingsGroupTitle">Quiz preferences</div>
+      <div class="settingRow">
+        <div class="settingIcon">🔊</div>
+        <div class="settingText"><strong>Sound effects</strong><span>Correct and wrong answer sounds</span></div>
+        <label class="switch"><input type="checkbox" id="soundToggle" checked><span></span></label>
+      </div>
+      <div class="settingRow">
+        <div class="settingIcon">⏱️</div>
+        <div class="settingText"><strong>Quiz timer</strong><span>Track time while answering</span></div>
+        <label class="switch"><input type="checkbox" id="timerToggle" checked><span></span></label>
+      </div>
+    </div>
+
+    <div class="settingsGroup">
+      <div class="settingsGroupTitle">Your progress</div>
+      <button class="settingsAction danger" id="resetProgressBtn" type="button">
+        <span class="settingIcon">↺</span><span class="settingText"><strong>Reset progress</strong><span>Clear score, streak, bookmarks and analytics</span></span><span>›</span>
+      </button>
+    </div>
+
+    <div class="aboutCard">
+      <strong>Science Master X</strong>
+      <span>CBSE Class 10 • NCERT based</span>
+      <small>Quiz • Notes • Mind Maps • Diagrams</small>
+    </div>
+  </div>
+</div>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer>
+
+<p>
+
+CBSE Science Quiz V2.0
+
+<br>
+
+Made with ❤️ for CBSE Class 10 Students
+
+</p>
+
+</footer>
+
+
+<script>
+(function(){
+  function getName(){
+    return localStorage.getItem('studentName') || 'Student';
+  }
+  window.openSettings = function(){
+    var m=document.getElementById('settingsModal');
+    if(!m) return;
+    var n=document.getElementById('settingsStudentName');
+    if(n) n.textContent=localStorage.getItem('studentName') || 'CBSE Student';
+    m.style.display='flex';
+    document.body.classList.add('settings-open');
+  };
+  window.closeSettingsPanel = function(){
+    var m=document.getElementById('settingsModal');
+    if(m) m.style.display='none';
+    document.body.classList.remove('settings-open');
+  };
+  window.editStudentName = function(){
+    var old=localStorage.getItem('studentName') || '';
+    var n=prompt('Enter your name:', old);
+    if(n===null) return;
+    n=n.trim();
+    if(!n) return;
+    localStorage.setItem('studentName',n);
+    var a=document.getElementById('settingsStudentName');
+    var b=document.getElementById('mobileStudentName');
+    if(a) a.textContent=n;
+    if(b) b.textContent=n;
+    var input=document.getElementById('studentName');
+    if(input) input.value=n;
+  };
+  function updateMobile(){
+    var n=getName();
+    var b=document.getElementById('mobileStudentName');
+    if(b) b.textContent=n;
+    var d=document.getElementById('mobileDayName');
+    if(d) d.textContent=new Date().toLocaleDateString(undefined,{weekday:'long'}).toUpperCase();
+    var a=Number(localStorage.getItem('attempt'))||0;
+    var c=Number(localStorage.getItem('correct'))||0;
+    var at=document.getElementById('mobileAttendance');
+    if(at) at.textContent=a ? Math.round(c/a*100)+'%' : '—';
+  }
+  window.addEventListener('load',updateMobile);
+  document.addEventListener('DOMContentLoaded',function(){
+    var close=document.getElementById('closeSettings');
+    if(close) close.onclick=window.closeSettingsPanel;
+    var modal=document.getElementById('settingsModal');
+    if(modal) modal.addEventListener('click',function(e){
+      if(e.target===modal) window.closeSettingsPanel();
+    });
+    var edit=document.getElementById('settingsEditBtn');
+    if(edit) edit.onclick=window.editStudentName;
+    var tt=document.getElementById('mobileTimetableBtn');
+    if(tt) tt.onclick=function(){ alert('Timetable is ready to be connected.'); };
+    var task=document.getElementById('mobileAddTaskBtn');
+    if(task) task.onclick=function(){
+      var t=prompt('Enter study task:');
+      if(t && t.trim()) alert('Task added: '+t.trim());
+    };
+  });
+})();
+</script>
+
+<script src="data/questions.js"></script>
+<script src="script.js"></script>
+
+<script src="js/certificate.js"></script>
+<script src="html2canvas.min.js"></script>
+
+<script src="jspdf.min.js"></script>
+
+</body>
+</html>
