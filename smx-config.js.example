@@ -1,0 +1,16 @@
+/* ==========================================================
+   smx-config.js — DEPLOYMENT CONFIG (safe to commit: URL only)
+   ----------------------------------------------------------
+   Copy this file to smx-config.js in your GitHub Pages repo
+   and point it at YOUR server-side proxy (Worker / Vercel /
+   your own Node server). The API key NEVER goes here.
+   ========================================================== */
+
+// Example (Cloudflare Worker):
+// window.SMX_AI_ENDPOINT = "https://science-master-x-ai.your-name.workers.dev/api/science-ai";
+
+// Example (Vercel):
+// window.SMX_AI_ENDPOINT = "https://your-project.vercel.app/api/science-ai";
+
+// If you serve the app with `node server.js` instead, delete this
+// file — the app automatically uses the same-origin /api/science-ai.

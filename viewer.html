@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Notes Viewer · Science Master X</title>
+
+<script src="settings-core.js"></script>
+<script src="theme.js"></script>
+
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="dark.css">
+
+<style>
+  body.viewerBody{display:flex;flex-direction:column;height:100vh;height:100dvh;overflow:hidden;padding-bottom:0}
+  .viewerTools{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .vTitle{font-size:13px;font-weight:800;flex:1;min-width:120px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .vMain{flex:1;min-height:0;padding:8px 10px calc(10px + env(safe-area-inset-bottom))}
+  .vFrameWrap{width:100%;height:100%;border-radius:20px;overflow:hidden;border:1px solid var(--glass-edge);background:rgba(255,255,255,.6);box-shadow:var(--shadow)}
+  html[data-theme="dark"] .vFrameWrap{background:rgba(15,23,42,.7)}
+  .vFrameWrap iframe{width:100%;height:100%;border:0}
+  .vNote{font-size:10.5px;color:var(--muted);text-align:center;padding:7px 10px 0;font-weight:600}
+  .vError{display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;height:100%;text-align:center;color:var(--muted);padding:20px}
+  .vError span{font-size:40px}
+</style>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📚%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#2563eb">
+
+</head>
+
+<body class="viewerBody">
+
+<header class="appHeader glass">
+    <a href="notes.html" class="iconBtn backBtn" aria-label="Back to Notes">←</a>
+    <div class="logo">📚</div>
+    <div class="title">
+        <h1 id="vHeading">NCERT Notes</h1>
+        <p>Science Master X · PDF viewer</p>
+    </div>
+    <div class="viewerTools">
+        <button class="iconBtn" id="vZoomOut" type="button" aria-label="Zoom out">−</button>
+        <button class="iconBtn" id="vZoomIn" type="button" aria-label="Zoom in">＋</button>
+        <button class="iconBtn" id="vFull" type="button" aria-label="Fullscreen">⛶</button>
+        <a class="iconBtn" id="vOpen" target="_blank" rel="noopener" aria-label="Open in browser tab" title="Open in browser">↗</a>
+        <a class="iconBtn" id="vDownload" download aria-label="Download PDF" title="Download">⬇</a>
+    </div>
+</header>
+
+<div class="vMain">
+    <div class="vFrameWrap" id="vFrameWrap">
+        <iframe id="vFrame" title="NCERT chapter notes PDF"></iframe>
+        <div class="vError" id="vError">
+            <span>📄</span>
+            <p><b>PDF could not be embedded here.</b><br>Use ↗ to open it in your browser, or ⬇ to download.</p>
+        </div>
+    </div>
+    <p class="vNote">Tip: if the preview stays blank in this environment, tap ↗ to open the real PDF in your browser.</p>
+</div>
+
+<script>
+(function () {
+    const params = new URLSearchParams(location.search);
+    let ch = parseInt(params.get("ch") || "1", 10);
+    if (isNaN(ch) || ch < 1 || ch > 13) ch = 1;
+
+    const NAMES = {
+        1:"Chemical Reactions and Equations",2:"Acids, Bases and Salts",3:"Metals and Non-metals",
+        4:"Carbon and its Compounds",5:"Life Processes",6:"Control and Coordination",
+        7:"How do Organisms Reproduce?",8:"Heredity",9:"Light – Reflection and Refraction",
+        10:"The Human Eye and the Colourful World",11:"Electricity",
+        12:"Magnetic Effects of Electric Current",13:"Our Environment"
+    };
+
+    const pdf = "notes/chapter" + ch + "x.pdf";   // real uploaded asset path
+    const frame = document.getElementById("vFrame");
+    const err = document.getElementById("vError");
+
+    document.title = "Chapter " + ch + " Notes · Science Master X";
+    document.getElementById("vHeading").textContent = "Chapter " + ch + " · " + NAMES[ch];
+    document.getElementById("vOpen").href = pdf;
+    document.getElementById("vDownload").href = pdf;
+
+    let zoom = 1;
+    function load() {
+        frame.src = pdf + "#zoom=" + zoom.toFixed(2);
+    }
+    load();
+
+    // Show the friendly error state if the embed cannot load (sandboxed previews)
+    let loaded = false;
+    frame.addEventListener("load", () => { loaded = true; });
+    setTimeout(() => {
+        if (!loaded) { frame.style.display = "none"; err.style.display = "flex"; }
+    }, 4000);
+
+    document.getElementById("vZoomIn").onclick = () => { zoom = Math.min(2.5, zoom + 0.25); load(); };
+    document.getElementById("vZoomOut").onclick = () => { zoom = Math.max(0.6, zoom - 0.25); load(); };
+    document.getElementById("vFull").onclick = () => {
+        const el = document.getElementById("vFrameWrap");
+        if (document.fullscreenElement) document.exitFullscreen();
+        else if (el.requestFullscreen) el.requestFullscreen();
+    };
+})();
+</script>
+
+</body>
+</html>
