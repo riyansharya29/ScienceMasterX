@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Science AI · Science Master X</title>
+
+<script src="settings-core.js"></script>
+    <script src="theme.js"></script>
+
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="ai.css">
+<link rel="stylesheet" href="dark.css">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧪%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#2563eb">
+
+</head>
+
+<body class="aiBody">
+
+<header class="appHeader glass">
+    <a href="index.html" class="iconBtn backBtn" aria-label="Back to Home">←</a>
+    <div class="logo">🧪</div>
+    <div class="title">
+        <h1>🤖 Science AI</h1>
+        <p>Ask anything about Class 10 Science</p>
+    </div>
+    <div class="headerActions">
+        <button id="newChatBtn" class="iconBtn" type="button" aria-label="New chat" title="New chat">✨</button>
+        <button id="clearChatBtn" class="iconBtn" type="button" aria-label="Clear chat" title="Clear chat">🗑️</button>
+    </div>
+</header>
+
+<main class="chatPage">
+
+    <!-- Response modes -->
+    <div class="modeBar" id="modeBar" role="radiogroup" aria-label="AI response mode">
+        <button class="modeChip active" data-mode="explain" type="button">💬 Explain</button>
+        <button class="modeChip" data-mode="numerical" type="button">🧮 Numerical</button>
+        <button class="modeChip" data-mode="practice" type="button">📝 Practice</button>
+        <button class="modeChip" data-mode="quick" type="button">⚡ Quick Revision</button>
+        <button class="modeChip" data-mode="exam" type="button">🎯 Exam Mode</button>
+        <button class="modeChip" data-mode="chapter" type="button">📚 Chapter Revision</button>
+    </div>
+
+    <!-- Chapter context -->
+    <div class="ctxBar">
+        <span class="ctxLabel">Context:</span>
+        <select id="ctxChapter" class="ctxChip" aria-label="Chapter context">
+            <option value="">🌐 All chapters</option>
+            <option value="1">1 · Chemical Reactions</option>
+            <option value="2">2 · Acids, Bases &amp; Salts</option>
+            <option value="3">3 · Metals &amp; Non-metals</option>
+            <option value="4">4 · Carbon Compounds</option>
+            <option value="5">5 · Life Processes</option>
+            <option value="6">6 · Control &amp; Coordination</option>
+            <option value="7">7 · Reproduction</option>
+            <option value="8">8 · Heredity</option>
+            <option value="9">9 · Light</option>
+            <option value="10">10 · Human Eye</option>
+            <option value="11">11 · Electricity</option>
+            <option value="12">12 · Magnetic Effects</option>
+            <option value="13">13 · Our Environment</option>
+        </select>
+    </div>
+
+    <div class="chatScroll" id="chatScroll">
+        <div class="chatMessages" id="chatMessages" aria-live="polite"></div>
+
+        <!-- Typing indicator -->
+        <div class="msgRow ai typingRow" id="typingRow" style="display:none;">
+            <div class="avatar">🧪</div>
+            <div class="bubble">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick actions -->
+    <div class="quickPrompts" id="quickPrompts">
+        <button class="chip" data-act="explain" type="button">📘 Explain Concept</button>
+        <button class="chip" data-act="numerical" type="button">🧮 Solve Numerical</button>
+        <button class="chip" data-act="mcq" type="button">📝 Generate MCQs</button>
+        <button class="chip" data-act="revise" type="button">🔄 Revise Chapter</button>
+        <button class="chip" data-act="example" type="button">💡 Give Example</button>
+        <button class="chip" data-act="test" type="button">🎯 Test me</button>
+    </div>
+
+    <!-- Composer -->
+    <div class="composer glass">
+        <textarea id="chatInput" rows="1"
+            placeholder="Ask your Science question..."
+            maxlength="1000" aria-label="Message Science AI"></textarea>
+        <button id="stopBtn" class="stopBtn" type="button" aria-label="Stop generation" style="display:none">■</button>
+        <button id="sendBtn" class="sendBtn" type="button" aria-label="Send">➤</button>
+    </div>
+
+    <p class="aiDisclaimer">Science AI can make mistakes — verify important answers with NCERT. Chat is saved on this device only.</p>
+
+</main>
+
+<script src="sounds.js"></script>
+
+<!-- Optional deployment config (URL only — NEVER a secret).
+     On GitHub Pages, create smx-config.js with:
+     window.SMX_AI_ENDPOINT = "https://your-proxy.example.com/api/science-ai";
+     If the file is absent this tag 404s harmlessly. -->
+<script src="smx-config.js"></script>
+
+<!-- Question bank: needed by the offline tutor to generate real MCQs.
+     Loads questions.js, falls back to data/questions.js (existing path). -->
+<script src="questions.js"></script>
+<script>if (typeof questions === "undefined") { document.write('<script src="data/questions.js"><\/script>'); }</script>
+
+<script src="ai-local.js"></script>
+<script src="ai.js"></script>
+
+</body>
+</html>

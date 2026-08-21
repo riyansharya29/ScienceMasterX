@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>NCERT Notes · Science Master X</title>
+
+<script src="settings-core.js"></script>
+<script src="theme.js"></script>
+
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="notes.css">
+<link rel="stylesheet" href="dark.css">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📚%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#2563eb">
+
+</head>
+
+<body>
+
+<header class="appHeader glass">
+    <a href="index.html" class="iconBtn backBtn" aria-label="Back to Home">←</a>
+    <div class="logo">📚</div>
+    <div class="title">
+        <h1>NCERT Notes</h1>
+        <p>Chapter-wise PDF notes · Science Master X</p>
+    </div>
+</header>
+
+<div class="page">
+
+    <div class="notesHero glass fade-up">
+        <div>
+            <h2>📚 NCERT Notes</h2>
+            <p>Chapter-wise notes aligned with the latest NCERT syllabus. Tap a chapter card — the real PDF opens in a new tab.</p>
+        </div>
+    </div>
+
+    <input type="text" id="searchBox" class="inputGlass fade-up-1" placeholder="🔍 Search Chapter...">
+
+    <div id="notesList">
+
+        <!-- Whole card = real accessible link to the real PDF (relative, deployment-safe) -->
+        <a class="noteCard glass card-hover fade-up-1" href="notes/chapter1x.pdf" target="_blank" rel="noopener">
+            <div class="noteNum">1</div>
+            <div class="noteText"><h2>Chemical Reactions and Equations</h2><p>Open PDF →</p></div>
+            <span class="prevBtn" role="button" tabindex="0" title="Preview in app" onclick="event.preventDefault();event.stopPropagation();openViewer(1)" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();openViewer(1)}">🔍</span>
+            <span class="noteArrow">📗</span>
+        </a>
+
+        <a class="noteCard glass card-hover" href="notes/chapter2x.pdf" target="_blank" rel="noopener">
+            <div class="noteNum">2</div>
+            <div class="noteText"><h2>Acids, Bases and Salts</h2><p>Open PDF →</p></div>
+            <span class="prevBtn" role="button" tabindex="0" title="Preview in app" onclick="event.preventDefault();event.stopPropagation();openViewer(2)" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();openViewer(2)}">🔍</span>
+            <span class="noteArrow">📗</span>
+        </a>
+
+        <a class="noteCard glass card-hover" href="notes/chapter3x.pdf" target="_blank" rel="noopener">
+            <div class="noteNum">3</div>
+            <div class="noteText"><h2>Metals and Non-metals</h2><p>Open PDF →</p></div>
+            <span class="prevBtn" role="button" tabindex="0" title="Preview in app" onclick="event.preventDefault();event.stopPropagation();openViewer(3)" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();openViewer(3)}">🔍</span>
+            <span class="noteArrow">📗</span>
+        </a>
+
+        <a class="noteCard glass card-hover" href="notes/chapter4x.pdf" target="_blank" rel="noopener">
+            <div class="noteNum">4</div>
+            <div class="noteText"><h2>Carbon and its Compounds</h2><p>Open PDF →</p></div>
+            <span class="prevBtn" role="button" tabindex="0" title="Preview in app" onclick="event.preventDefault();event.stopPropagation();openViewer(4)" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();openViewer(4)}">🔍</span>
+            <span class="noteArrow">📗</span>
+        </a>
+
+        <a class="noteCard glass card-hover" href="notes/chapter5x.pdf" target="_blank" rel="noopener">
+            <div class="noteNum">5</div>
+            <div class="noteText"><h2>Life Processes</h2><p>Open PDF →</p></div>
+            <span class="prevBtn" role="button" tabindex="0" title="Preview in app" onclick="event.preventDefault();event.stopPropagation();openViewer(5)" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();openViewer(5)}">🔍</span>
+            <span class="noteArrow">📗</span>
+        </a>
+
+        <a class="noteCard glass card-hover" href="notes/chapter6x.pdf" target="_blank" rel="noopener">
+            <div class="noteNum">6</div>
+            <div class="noteText"><h2>Control and Coordination</h2><p>Open PDF →</p></div>
+            <span class="prevBtn" role="button" tabindex="0" title="Preview in app" onclick="event.preventDefault();event.stopPropagation();openViewer(6)" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();openViewer(6)}">🔍</span>
+            <span class="noteArrow">📗</span>
+        </a>
+
+        <a class="noteCard glass card-hover" href="notes/chapter7x.pdf" target="_blank" rel="noopener">
+            <div class="noteNum">7</div>
+            <div class="noteText"><h2>How do Organisms Reproduce?</h2><p>Open PDF →</p></div>
+            <span class="prevBtn" role="button" tabindex="0" title="Preview in app" onclick="event.preventDefault();event.stopPropagation();openViewer(7)" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();openViewer(7)}">🔍</span>
+            <span class="noteArrow">📗</span>
+        </a>
+
+        <a class="noteCard glass card-hover" href="notes/chapter8x.pdf" target="_blank" rel="noopener">
+            <div class="noteNum">8</div>
+            <div class="noteText"><h2>Heredity</h2><p>Open PDF →</p></div>
+            <span class="prevBtn" role="button" tabindex="0" title="Preview in app" onclick="event.preventDefault();event.stopPropagation();openViewer(8)" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();openViewer(8)}">🔍</span>
+            <span class="noteArrow">📗</span>
+        </a>
+
+        <a class="noteCard glass card-hover" href="notes/chapter9x.pdf" target="_blank" rel="noopener">
+            <div class="noteNum">9</div>
+            <div class="noteText"><h2>Light – Reflection and Refraction</h2><p>Open PDF →</p></div>
+            <span class="prevBtn" role="button" tabindex="0" title="Preview in app" onclick="event.preventDefault();event.stopPropagation();openViewer(9)" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();openViewer(9)}">🔍</span>
+            <span class="noteArrow">📗</span>
+        </a>
+
+        <a class="noteCard glass card-hover" href="notes/chapter10x.pdf" target="_blank" rel="noopener">
+            <div class="noteNum">10</div>
+            <div class="noteText"><h2>The Human Eye and the Colourful World</h2><p>Open PDF →</p></div>
+            <span class="prevBtn" role="button" tabindex="0" title="Preview in app" onclick="event.preventDefault();event.stopPropagation();openViewer(10)" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();openViewer(10)}">🔍</span>
+            <span class="noteArrow">📗</span>
+        </a>
+
+        <a class="noteCard glass card-hover" href="notes/chapter11x.pdf" target="_blank" rel="noopener">
+            <div class="noteNum">11</div>
+            <div class="noteText"><h2>Electricity</h2><p>Open PDF →</p></div>
+            <span class="prevBtn" role="button" tabindex="0" title="Preview in app" onclick="event.preventDefault();event.stopPropagation();openViewer(11)" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();openViewer(11)}">🔍</span>
+            <span class="noteArrow">📗</span>
+        </a>
+
+        <a class="noteCard glass card-hover" href="notes/chapter12x.pdf" target="_blank" rel="noopener">
+            <div class="noteNum">12</div>
+            <div class="noteText"><h2>Magnetic Effects of Electric Current</h2><p>Open PDF →</p></div>
+            <span class="prevBtn" role="button" tabindex="0" title="Preview in app" onclick="event.preventDefault();event.stopPropagation();openViewer(12)" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();openViewer(12)}">🔍</span>
+            <span class="noteArrow">📗</span>
+        </a>
+
+        <a class="noteCard glass card-hover" href="notes/chapter13x.pdf" target="_blank" rel="noopener">
+            <div class="noteNum">13</div>
+            <div class="noteText"><h2>Our Environment</h2><p>Open PDF →</p></div>
+            <span class="prevBtn" role="button" tabindex="0" title="Preview in app" onclick="event.preventDefault();event.stopPropagation();openViewer(13)" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();openViewer(13)}">🔍</span>
+            <span class="noteArrow">📗</span>
+        </a>
+
+    </div>
+
+    <div id="noResults" class="noResults" style="display:none;">No chapters found 🔍</div>
+
+    <a href="index.html" class="backLink">⬅ Back to Home</a>
+
+    <footer class="pageFooter"><b>Science Master X</b> · NCERT Notes · CBSE Class 10</footer>
+</div>
+
+<nav class="bottomNav glass" aria-label="Main navigation">
+    <a class="navItem" href="index.html"><span>🏠</span><small>Home</small></a>
+    <a class="navItem" href="ai.html"><span>🤖</span><small>AI</small></a>
+    <a class="navItem active" href="notes.html"><span>📚</span><small>Study</small></a>
+    <a class="navItem navCenter" href="index.html#practiceSection"><span>🎯</span><small>Quiz</small></a>
+    <a class="navItem" href="index.html"><span>👤</span><small>Profile</small></a>
+</nav>
+
+<script src="sounds.js"></script>
+<script src="notes.js"></script>
+
+</body>
+</html>

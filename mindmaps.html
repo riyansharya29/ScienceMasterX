@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Mind Maps · Science Master X</title>
+
+<script src="settings-core.js"></script>
+    <script src="theme.js"></script>
+
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="mindmaps.css">
+<link rel="stylesheet" href="dark.css">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧠%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#2563eb">
+
+</head>
+
+<body>
+
+<header class="appHeader glass">
+    <a href="index.html" class="iconBtn backBtn" aria-label="Back to Home">←</a>
+    <div class="logo">🧠</div>
+    <div class="title">
+        <h1>Mind Maps</h1>
+        <p>Visual revision library · Science Master X</p>
+    </div>
+</header>
+
+<div class="page">
+
+    <div class="mmHero glass fade-up">
+        <div>
+            <h2>🧠 Mind Maps</h2>
+            <p>Visual &amp; easy revision — one glance and the whole chapter clicks. Tap a chapter to open its full mind map.</p>
+        </div>
+    </div>
+
+    <input type="text" id="searchBox" class="inputGlass fade-up-1" placeholder="🔍 Search Chapter...">
+
+    <div id="mindmapList" class="mmGrid"></div>
+
+    <div id="noResults" class="noResults" style="display:none;">No chapters found 🔍</div>
+
+    <a href="index.html" class="backLink">⬅ Back to Home</a>
+
+    <footer class="pageFooter"><b>Science Master X</b> · Mind Maps · CBSE Class 10</footer>
+</div>
+
+<!-- Fullscreen viewer -->
+<div id="mmViewer" class="mmViewer">
+    <div class="mmViewerBar">
+        <span id="mmViewerTitle">Mind Map</span>
+        <div class="viewerZoom">
+            <button id="mmZoomOut" class="iconBtn" type="button" aria-label="Zoom out">−</button>
+            <button id="mmZoomReset" class="iconBtn" type="button" aria-label="Reset zoom">1:1</button>
+            <button id="mmZoomIn" class="iconBtn" type="button" aria-label="Zoom in">＋</button>
+        </div>
+        <button id="mmViewerClose" class="iconBtn" type="button" aria-label="Close">✕</button>
+    </div>
+    <div class="mmViewerBody">
+        <img id="mmViewerImg" alt="Mind Map">
+    </div>
+</div>
+
+<nav class="bottomNav glass" aria-label="Main navigation">
+    <a class="navItem" href="index.html"><span>🏠</span><small>Home</small></a>
+    <a class="navItem" href="ai.html"><span>🤖</span><small>AI</small></a>
+    <a class="navItem active" href="mindmaps.html"><span>📚</span><small>Study</small></a>
+    <a class="navItem navCenter" href="index.html#practiceSection"><span>🎯</span><small>Quiz</small></a>
+    <a class="navItem" href="index.html"><span>👤</span><small>Profile</small></a>
+</nav>
+
+<script src="mindmaps.js"></script>
+
+</body>
+</html>

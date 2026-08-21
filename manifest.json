@@ -1,0 +1,17 @@
+{
+  "name": "Science Master X — CBSE Class 10 Science",
+  "short_name": "Science Master X",
+  "description": "Premium CBSE Class 10 Science learning app: Quiz, MCQs, PYQs, NCERT Notes, Mind Maps, Important Diagrams, Formula Sheet and Science AI tutor.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#F5F9FF",
+  "theme_color": "#2563EB",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232563EB'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle'%3E🧪%3C/text%3E%3C/svg%3E",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

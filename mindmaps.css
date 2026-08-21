@@ -1,0 +1,80 @@
+/* ==========================================================
+   SCIENCE MASTER X — MIND MAPS PAGE (Liquid Glass library)
+   Existing image paths preserved: mindmaps/chapterN.png
+   ========================================================== */
+
+.mmHero{display:flex;align-items:center;gap:16px;padding:22px;border-radius:var(--r-lg);margin-bottom:16px}
+.mmHero h2{font-size:21px;font-weight:800;letter-spacing:-.4px}
+.mmHero p{font-size:12.5px;color:var(--muted);margin-top:6px;font-weight:500;line-height:1.55;max-width:560px}
+
+#searchBox{margin-bottom:18px;display:block}
+
+.mmGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+
+.mapCard{
+  display:flex;flex-direction:column;text-align:left;
+  padding:14px;border-radius:var(--r-lg);width:100%;
+  overflow:hidden;
+}
+.mapPreview{
+  width:100%;aspect-ratio:4/3;border-radius:18px;overflow:hidden;
+  background:var(--grad-soft);
+  display:grid;place-items:center;position:relative;
+  border:1px solid rgba(37,99,235,.1);
+}
+.mapPreview img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.mapCard:hover .mapPreview img{transform:scale(1.05)}
+.mapPreview .ph{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  color:var(--blue);font-size:30px;
+}
+.mapPreview .ph small{font-size:10px;font-weight:700;color:var(--muted)}
+.mapMeta{display:flex;align-items:center;gap:11px;padding:13px 4px 4px}
+.mapNum{
+  width:38px;height:38px;flex:none;border-radius:13px;
+  background:var(--grad);color:#fff;font-weight:800;font-size:15px;
+  display:grid;place-items:center;box-shadow:var(--blue-glow);
+}
+.mapMeta h2{font-size:13px;font-weight:700;line-height:1.35;letter-spacing:-.1px}
+.mapMeta p{font-size:11px;color:var(--blue);font-weight:700;margin-top:3px}
+
+.noResults{text-align:center;color:var(--muted);font-weight:600;padding:34px 10px;font-size:14px}
+
+.backLink{
+  display:block;text-align:center;margin:26px auto 0;
+  padding:13px 22px;border-radius:16px;width:min(320px,100%);
+  background:rgba(255,255,255,.78);border:1px solid var(--glass-edge);
+  color:var(--blue);font-weight:800;font-size:13.5px;
+  box-shadow:var(--shadow-sm);transition:.2s;
+}
+.backLink:hover{background:#fff;transform:translateY(-1px)}
+
+/* Fullscreen viewer */
+.mmViewer{
+  position:fixed;inset:0;z-index:300;display:none;
+  background:rgba(23,32,51,.6);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  flex-direction:column;
+}
+.mmViewer.open{display:flex;animation:popIn .22s ease}
+.mmViewerBar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 18px;color:#fff;font-weight:800;font-size:14px;
+}
+.mmViewerBar .iconBtn{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.25);color:#fff}
+.mmViewerBody{flex:1;display:grid;place-items:center;padding:0 18px calc(18px + env(safe-area-inset-bottom));overflow:auto}
+.mmViewerBody img{
+  max-width:min(960px,100%);max-height:100%;border-radius:20px;
+  box-shadow:0 30px 80px rgba(0,0,0,.4);background:#fff;
+}
+
+@media(max-width:860px){.mmGrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.mmGrid{grid-template-columns:1fr}.mapMeta h2{font-size:13.5px}}
+
+/* Zoom controls */
+.viewerZoom{display:flex;gap:6px}
+.viewerZoom .iconBtn{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.25);color:#fff;width:36px;height:36px;font-size:15px}
+.mmViewerBody img{transform-origin:top center;transition:transform .2s ease}
+
+/* v4 parity: contained, centered preview */
+.mmViewerBody img{object-fit:contain;background:#fff}

@@ -1,0 +1,25 @@
+{
+  "name": "science-master-x",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Science Master X — CBSE Class 10 Science app. The Vercel backend (api/science-ai.js) is dependency-free; express/jsdom below are only for the optional local server and test harness.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node qa-vercel.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "cbse",
+    "class10",
+    "science"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "jsdom": "^29.1.1"
+  }
+}

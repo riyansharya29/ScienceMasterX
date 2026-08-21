@@ -1,0 +1,121 @@
+/* ==========================================================
+   SCIENCE MASTER X — DARK MODE COMPONENT OVERRIDES
+   Loaded LAST on every page. Only adjusts components that
+   hardcode light colours; everything else follows tokens.
+   ========================================================== */
+
+/* Header & controls */
+html[data-theme="dark"] .iconBtn{background:rgba(23,33,56,.7);border-color:var(--glass-edge);color:#E2E8F0}
+html[data-theme="dark"] .iconBtn:hover{background:rgba(37,52,84,.85);border-color:rgba(59,130,246,.45)}
+
+/* Forms */
+html[data-theme="dark"] .selectGlass,
+html[data-theme="dark"] .inputGlass{
+  background:rgba(15,23,42,.7);border-color:rgba(148,163,184,.22);color:var(--text);
+}
+html[data-theme="dark"] .selectGlass:focus,
+html[data-theme="dark"] .inputGlass:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(59,130,246,.18)}
+html[data-theme="dark"] .inputGlass::placeholder{color:#64748B}
+html[data-theme="dark"] .selectGlass{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2322D3EE' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* Search */
+html[data-theme="dark"] .searchSheet input{background:rgba(15,23,42,.85);border-color:rgba(148,163,184,.25);color:var(--text)}
+html[data-theme="dark"] .searchResult:hover{background:rgba(59,130,246,.12)}
+html[data-theme="dark"] .searchResult .srIcon{background:rgba(59,130,246,.14)}
+html[data-theme="dark"] .notifItem:hover{background:rgba(59,130,246,.12)}
+
+/* Home components */
+html[data-theme="dark"] .heroChip{background:rgba(23,33,56,.75);border-color:var(--glass-edge)}
+html[data-theme="dark"] .resIcon.blue{background:rgba(59,130,246,.16)}
+html[data-theme="dark"] .resIcon.cyan{background:rgba(34,211,238,.14)}
+html[data-theme="dark"] .resIcon.violet{background:rgba(167,139,250,.16)}
+html[data-theme="dark"] .resIcon.amber{background:rgba(245,158,11,.16)}
+html[data-theme="dark"] .resArrow{color:#64748B}
+
+html[data-theme="dark"] .modeBtn{background:rgba(23,33,56,.7);border-color:rgba(148,163,184,.2);color:var(--text)}
+html[data-theme="dark"] .modeBtn:hover{background:rgba(30,42,70,.85);border-color:rgba(59,130,246,.5)}
+html[data-theme="dark"] .modeBtn.active{background:rgba(59,130,246,.16);border-color:var(--blue);color:#7CB3FF}
+
+html[data-theme="dark"] .chpBar{background:rgba(148,163,184,.16)}
+html[data-theme="dark"] .chpRow{border-color:rgba(148,163,184,.1)}
+html[data-theme="dark"] .ringBg{stroke:rgba(148,163,184,.16)}
+
+html[data-theme="dark"] .dailyOpt{background:rgba(23,33,56,.72);border-color:rgba(148,163,184,.22)}
+html[data-theme="dark"] .dailyOpt:hover{background:rgba(30,42,70,.9);border-color:var(--blue)}
+html[data-theme="dark"] .dailyOpt.correct{background:rgba(22,163,74,.16);border-color:var(--green);color:#4ADE80}
+html[data-theme="dark"] .dailyOpt.wrong{background:rgba(239,68,68,.14);border-color:var(--red);color:#F87171}
+
+html[data-theme="dark"] .perfChip{background:rgba(23,33,56,.7)}
+html[data-theme="dark"] .perfChip.strong{background:rgba(22,163,74,.14);color:#4ADE80}
+html[data-theme="dark"] .perfChip.weak{background:rgba(239,68,68,.12);color:#F87171}
+html[data-theme="dark"] .achBadge.locked .aIcon{background:rgba(100,116,139,.12)}
+
+/* Quiz */
+html[data-theme="dark"] .option{background:rgba(23,33,56,.72);border-color:rgba(148,163,184,.2)}
+html[data-theme="dark"] .option:hover{background:rgba(30,42,70,.85);border-color:rgba(59,130,246,.5)}
+html[data-theme="dark"] .option.selected{background:rgba(59,130,246,.16);border-color:var(--blue)}
+html[data-theme="dark"] .option.correct{background:rgba(22,163,74,.16)!important;border-color:var(--green)!important}
+html[data-theme="dark"] .option.wrong{background:rgba(239,68,68,.14)!important;border-color:var(--red)!important}
+html[data-theme="dark"] .progressBar{background:rgba(148,163,184,.16)}
+html[data-theme="dark"] #bookmarkBtn{background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.4);color:#FBBF24}
+html[data-theme="dark"] #explanationBox{background:rgba(34,211,238,.08);border-color:rgba(34,211,238,.3)}
+
+/* Results */
+html[data-theme="dark"] .resultCard{background:rgba(23,33,56,.6);border-color:var(--glass-edge)}
+html[data-theme="dark"] .stat{background:rgba(15,23,42,.7);border-color:var(--glass-edge)}
+html[data-theme="dark"] .finalScoreSummary{background:rgba(23,33,56,.6);border-color:var(--glass-edge)}
+html[data-theme="dark"] .summaryRow{border-color:rgba(148,163,184,.12);color:var(--muted)}
+html[data-theme="dark"] .summaryRow strong{color:var(--text)}
+html[data-theme="dark"] .resultButtons button{background:rgba(23,33,56,.72);border-color:rgba(148,163,184,.22);color:var(--text)}
+html[data-theme="dark"] .resultButtons button:hover{background:rgba(30,42,70,.9);border-color:var(--blue)}
+html[data-theme="dark"] .circle{background:rgba(59,130,246,.12);color:#7CB3FF}
+html[data-theme="dark"] #resultGrade{color:#7CB3FF}
+
+/* Settings */
+html[data-theme="dark"] .settingsSheet{background:rgba(13,20,36,.94);border-color:rgba(148,163,184,.18)}
+html[data-theme="dark"] .settingsClose{background:rgba(148,163,184,.12);color:#CBD5E1}
+html[data-theme="dark"] .profileCard{background:rgba(59,130,246,.1);border-color:rgba(59,130,246,.25)}
+html[data-theme="dark"] .profileEdit{background:rgba(23,33,56,.8);border-color:rgba(59,130,246,.4);color:#7CB3FF}
+html[data-theme="dark"] .profileEdit:hover{background:var(--blue);color:#fff}
+html[data-theme="dark"] .settingRow,
+html[data-theme="dark"] .settingsAction{background:rgba(23,33,56,.7);border-color:rgba(148,163,184,.16)}
+html[data-theme="dark"] .settingIcon{background:rgba(59,130,246,.14)}
+html[data-theme="dark"] .settingsAction:hover{background:rgba(30,42,70,.9)}
+html[data-theme="dark"] .aboutCard{background:rgba(59,130,246,.08);border-color:rgba(59,130,246,.2)}
+html[data-theme="dark"] .themeBtn{background:rgba(23,33,56,.7);border-color:rgba(148,163,184,.2)}
+html[data-theme="dark"] .themeBtn.active{background:rgba(59,130,246,.16);border-color:var(--blue);color:#7CB3FF}
+html[data-theme="dark"] .customPanel{background:rgba(59,130,246,.06);border-color:rgba(59,130,246,.35)}
+html[data-theme="dark"] .switch span{background:rgba(148,163,184,.25)}
+
+/* AI page */
+html[data-theme="dark"] .msgRow.ai .bubble{background:rgba(23,33,56,.8);border-color:rgba(148,163,184,.18)}
+html[data-theme="dark"] .bubble .kw{background:rgba(34,211,238,.14);color:#67E8F9}
+html[data-theme="dark"] .bubble pre{background:rgba(0,0,0,.3);border-color:rgba(148,163,184,.18)}
+html[data-theme="dark"] .chip{background:rgba(23,33,56,.75);border-color:rgba(148,163,184,.2);color:var(--text)}
+html[data-theme="dark"] .chip:hover{border-color:var(--blue);color:#7CB3FF;background:rgba(30,42,70,.9)}
+html[data-theme="dark"] .composer{background:rgba(23,33,56,.8)}
+html[data-theme="dark"] .composer textarea{color:var(--text)}
+html[data-theme="dark"] .bubble.error{background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.4);color:#FCA5A5}
+html[data-theme="dark"] .retryBtn{background:rgba(23,33,56,.9);border-color:rgba(239,68,68,.45);color:#F87171}
+html[data-theme="dark"] .msgActions button{color:#8B96AB}
+html[data-theme="dark"] .msgActions button:hover{color:#7CB3FF;background:rgba(59,130,246,.12)}
+html[data-theme="dark"] .modeChip{background:rgba(23,33,56,.7);border-color:rgba(148,163,184,.2);color:var(--text)}
+html[data-theme="dark"] .modeChip.active{background:rgba(59,130,246,.18);border-color:var(--blue);color:#7CB3FF}
+html[data-theme="dark"] .ctxChip{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.3);color:#67E8F9}
+
+/* Sub-pages */
+html[data-theme="dark"] .backLink{background:rgba(23,33,56,.75);border-color:rgba(148,163,184,.2);color:#7CB3FF}
+html[data-theme="dark"] .backLink:hover{background:rgba(30,42,70,.95)}
+html[data-theme="dark"] .mapPreview{background:rgba(59,130,246,.08);border-color:rgba(148,163,184,.18)}
+html[data-theme="dark"] .dgPreview{background:rgba(23,33,56,.7);border-color:rgba(148,163,184,.18)}
+html[data-theme="dark"] .fmTabs{background:rgba(23,33,56,.6)}
+html[data-theme="dark"] .fmTab.active{color:#fff}
+html[data-theme="dark"] .fmTag{background:rgba(59,130,246,.14);color:#7CB3FF}
+html[data-theme="dark"] .formulaCard p{color:var(--muted)}
+html[data-theme="dark"] .noteNum{box-shadow:0 8px 22px rgba(37,99,235,.4)}
+html[data-theme="dark"] .noResults{color:var(--muted)}
+
+/* Keep the certificate a light "paper" artifact in dark mode too */
+html[data-theme="dark"] .certificate-modal{background:rgba(0,0,0,.8)}
